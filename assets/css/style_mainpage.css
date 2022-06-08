@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.title_container{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(99, 185, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title_container p{
+    color: white;
+    font-size: 50px;
+    border: solid 4px white;
+    padding: 25px;
+    font-family: 'Franklin Gothic Book';
+}
+
+.categorie_name{
+    position: relative;
+    display: inline-block;
+    background-color: black;
+    color: white;
+    margin: 20px;
+    padding: 8px;
+    padding-right: 11px;
+    text-transform:uppercase;
+    font-family: 'Franklin Gothic Book';
+    font-weight: bolder;
+    border-radius: 5px;
+    font-size: 22px;
+    width: fit-content;
+    margin-left: 5.5%;
+    margin-top: 10vh;
+}
+
+.projets_grid{
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 430px);
+    margin: 0 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100%;
+}
+
+.projets_item{
+    background-color: black;
+    margin: 5px 0;
+    width: 430px;
+    height: 180px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.2s, border 0.2s;
+}
+
+.projets_item img{
+    position: absolute;
+    object-position: center;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: filter 0.1s;
+}
+
+.projets_item p{
+    position: absolute;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-family: 'Franklin Gothic Book';
+    text-transform:uppercase;
+    transition: opacity 0.3s;
+}
+
+.projets_item:hover{
+    transform:scale(1.01);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.473);
+}
+
+/* CONTACT */
+
+  .contact-form-wrapper {
+    padding: 100px 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .contact-form {
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 400px;
+  }
+  
+  .contact-form textarea {
+    resize: none;
+  }
+  
+  .contact-form .form-input,
+  .form-text-area {
+    background-color: #f0f4f5;
+    height: 50px;
+    padding-left: 16px;
+  }
+  
+  .contact-form .form-text-area {
+    background-color: #f0f4f5;
+    height: auto;
+    padding-left: 16px;
+  }
+  
+  .contact-form .form-control::placeholder {
+    color: #aeb4b9;
+    font-weight: 500;
+    opacity: 1;
+  }
+  
+  .contact-form .form-control:-ms-input-placeholder {
+    color: #aeb4b9;
+    font-weight: 500;
+  }
+  
+  .contact-form .form-control::-ms-input-placeholder {
+    color: #aeb4b9;
+    font-weight: 500;
+  }
+  
+  .contact-form .form-control:focus {
+    border-color: #3fc3f3;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.07), 0 0 8px #f33fb0;
+  }
+  
+  .contact-form .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  .contact-form .description {
+    color: #aeb4b9;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .contact-form .submit-button-wrapper {
+    text-align: center;
+  }
+  
+  .contact-form .submit-button-wrapper input {
+    border: none;
+    border-radius: 4px;
+    background-color: #32b8f2;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+  
+  .contact-form .submit-button-wrapper input:hover {
+    background-color: #00b7d3;
+  }
+  
