@@ -1,0 +1,75 @@
+#form_ajouter_projet{
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  label{
+    font-family: 'Franklin Gothic Book';
+    text-transform:uppercase;
+    font-size: 25px;
+    margin-top: 20px;
+  }
+
+  .image-box p{
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  #img_instructions{
+    font-family: 'Franklin Gothic Book';
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  input{
+      border-radius: 6px;
+      height: 35px;
+      width: 20%;
+      min-width: 150px;
+      border: solid 2px black;
+  }
+
+  select{
+    border-radius: 6px;
+    height: 35px;
+    width: 20%;
+    min-width: 150px;
+    border: solid 2px black;
+  }
+
+  .file-upload .image-box {
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 310px;
+    height: 170px;
+    border: solid 2px black;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .file-upload .image-box img {
+    height: 100%;
+    display: none;
+    object-fit: cover;
+    background-size: cover;
+  }
+  .file-upload .image-box p {
+    position: relative;
+    color: rgb(0, 0, 0);
+
+  }
+
+  #btn_form_ajouter_submit{
+      border: 0;
+      background-color: rgb(99, 185, 255);
+      color: white;
+      text-transform:uppercase;
+      font-size: 20px;
+      width: 100px;
+      margin-top: 70px;
+      margin-bottom: 130px;
+  }

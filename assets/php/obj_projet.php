@@ -22,7 +22,4 @@ class Projet {
         return $this->link;
     }
   }
-  
-//   $apple = new Fruit("Apple");
-//   echo $apple->get_name();
 ?>

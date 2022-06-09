@@ -1,0 +1,91 @@
+.container{
+    width: 100vw;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.one_categorie_container{
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 40px;
+}
+.input_newcategorie{
+    width: 90%;
+    max-width: 333px;
+    margin-left: -5px;
+    height: 40px;
+    border-radius: 6px;
+    border: 2px solid black;
+    margin-top: 10px;
+    font-family: 'Franklin Gothic Book';
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.bar_inputname{
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    position: relative;
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 8px;
+    text-transform:uppercase;
+    font-family: 'Franklin Gothic Book';
+    font-weight: bolder;
+    border-radius: 5px;
+    font-size: 22px;
+    height: 100%;
+    width: 100%;
+}
+
+.categorie_name_with_pen{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+}
+
+.bar_inputpen{
+    position: relative;
+    background-image: url('../img/pen.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: auto;
+    width: 35px;
+    margin-top: 5px;
+    margin-right: 15px;
+  }
+
+  .bar_deleteicon{
+    position: relative;
+    background-image: url('../img/delete.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: auto;
+    width: 35px;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.btn{
+    background-color: rgb(0, 162, 255);
+    color: white;
+    font-family: 'Franklin Gothic Book';
+    width: 50px;
+    padding: 10px;
+    margin: 16px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 6px;
+}
