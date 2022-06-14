@@ -16,58 +16,22 @@
 
     include 'assets/php/obj_categorie.php';
     include 'assets/php/obj_projet.php';
+    include 'assets/php/connectdb.php';
 
-        $liste_categories = [
-            new Categorie("Categorie 1", [
-                new Projet('Projet blablacar', 'default.png', 'www.google.com'),
-                new Projet('Projet videos', 'default.png', 'www.google.com'),
-                new Projet('Projet super cuite', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com')
-            ]),
-            new Categorie("Deuxième catégorie", [
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com')
-            ]),
-            new Categorie("The third one", [
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com')
-            ]),
-            new Categorie("Q U A T R E", [
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com'),
-                new Projet('Projet nom exemple', 'default.png', 'www.google.com')
-            ])
-            ];
+    $liste_categories = [];
+    $stmt = $db->query("SELECT * FROM categorie");
+    while ($row = $stmt->fetch()) {
+
+      if ($row['categorie_id']!=3){
+
+        $projectList = [];
+                $stmt1 = $db->query("SELECT * FROM projet WHERE projet_categorie_id =".$row['categorie_id']);
+                while ($row1 = $stmt1->fetch()) {
+                    $projectList[] = new Projet($row1['projet_name'], $row1['projet_miniature'], $row1['projet_link'], $row1['projet_id'], $row1['projet_categorie_id']);
+                }
+        $liste_categories[] = new Categorie($row['categorie_name'], $projectList, $row['categorie_id']);
+              }
+    }
 
             foreach ($liste_categories as &$categorie) {
                 echo '<p class="categorie_name">'.$categorie->get_name().'</p>';
@@ -76,7 +40,7 @@
                 foreach ($categorie->get_liste_de_projet() as &$projet) {
                 echo '<a class="projets_item" href="'.$projet->get_link().'">'
                 .
-                "<img src=assets/img/".$projet->get_miniature()."></img>"
+                "<img src=assets/uploaded_files/".$projet->get_miniature()."></img>"
                 .
                 '<p>'.$projet->get_name().'</p>'
                 .

@@ -72,4 +72,11 @@
       width: 100px;
       margin-top: 70px;
       margin-bottom: 130px;
+      cursor: pointer;
+  }
+
+  #projet_new_categorie_title{
+    margin: 15px;
+    max-width: 300px;
+    display: none;
   }

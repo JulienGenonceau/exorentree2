@@ -3,13 +3,17 @@
 class Categorie {
     public $name;
     public $liste_de_projets;
+    public $id;
   
-    function __construct($name, $liste_de_projets) {
+    function __construct($name, $liste_de_projets, $id) {
       $this->name = $name;
       $this->liste_de_projets = $liste_de_projets;
+      $this->id = $id;
     }
 
     function get_name() {
+        str_replace('"', "", $this->name);
+        str_replace("'", "", $this->name);
         return $this->name;
     }
 
@@ -23,6 +27,10 @@ class Categorie {
 
     function get_categorie_size(){
         return count($this->liste_de_projets);
+    }
+
+    function get_categorie_id(){
+        return $this->id;
     }
 
   }
